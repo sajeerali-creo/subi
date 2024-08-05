@@ -1,0 +1,277 @@
+body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  background-color: var(--black);
+}
+
+h1, h2, h3, h4, h5, p, a, div {
+  line-height: 1.5em;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: var(--primary);
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: #fff;
+  --primary: #EBB53E;
+  --black: #1F2329;
+  --semi-black: #2B2F35;
+  --text: #666;
+}
+
+.btn-contact {
+  display: flex;
+  padding: 8px 16px;
+  background-color: var(--primary);
+  color: var(--black);
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-transform: uppercase;
+  transition: all 0.3s ease-out;
+}
+.btn-contact:hover {
+  background-color: #EAA63A;
+  color: var(--black);
+}
+
+.btn-menu {
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.btn-close {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+.banner h1 {
+  color: var(--white);
+}
+.banner p {
+  font-size: 18px;
+  color: #999;
+}
+
+.padding-top {
+  padding-top: 100px;
+}
+
+.padding-bottom {
+  padding-bottom: 100px;
+}
+
+.skills-section {
+  padding: 24px;
+}
+@media (min-width: 992px) {
+  .skills-section {
+    padding: 48px 48px 130px 48px;
+  }
+}
+
+.skill-box {
+  width: 100%;
+  min-height: 200px;
+  background-color: var(--semi-black);
+  border-radius: 6px;
+  border: 1px solid #373c45;
+  padding: 24px;
+}
+.skill-box p {
+  font-size: 14px;
+  color: var(--white);
+  opacity: 0.6;
+}
+@media (min-width: 992px) {
+  .skill-box {
+    padding: 48px;
+  }
+}
+
+.abt-me {
+  padding-top: 120px;
+  text-align: left;
+}
+.abt-me h2 {
+  color: var(--white);
+}
+.abt-me p {
+  color: var(--white);
+  opacity: 0.6;
+}
+.abt-me ul {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.abt-me ul li {
+  display: flex;
+  padding: 8px 16px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: var(--semi-black);
+  color: var(--white);
+  font-size: 14px;
+}
+
+.profile-pic {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.profile-pic img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.copyright {
+  font-size: 14px;
+}
+
+header {
+  background-color: var(--semi-black);
+  padding: 24px;
+}
+@media (min-width: 992px) {
+  header {
+    padding: 24px 48px;
+  }
+}
+header .logo {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--white);
+}
+header .main-menu {
+  display: flex;
+  gap: 48px;
+}
+header .main-menu li a {
+  color: var(--white);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #999;
+}
+header .main-menu li .active {
+  color: #fff;
+  font-weight: 600;
+}
+
+.offcanvas {
+  background-color: var(--semi-black);
+}
+.offcanvas .main-menu {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.offcanvas .main-menu li a {
+  font-size: 24px;
+}
+.offcanvas .offcanvas-body {
+  padding: 48px;
+}
+
+.tabs-menu {
+  display: flex;
+  gap: 32px;
+  overflow: auto;
+  white-space: nowrap;
+}
+.tabs-menu li a {
+  color: var(--white);
+  text-transform: uppercase;
+  opacity: 0.5;
+  font-weight: 500;
+}
+.tabs-menu li .active {
+  opacity: 1;
+}
+
+footer {
+  padding: 24px;
+  background-color: var(--semi-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  footer {
+    padding: 24px 48px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: inherit;
+  }
+}
+
+.work-card {
+  width: 100%;
+  height: 400px;
+  background-color: var(--semi-black);
+  overflow: hidden;
+  position: relative;
+}
+.work-card img {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.work-card .over-image {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 47, 53, 0.8);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 48px;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+.work-card:hover .over-image {
+  opacity: 1;
+}/*# sourceMappingURL=site.css.map */
