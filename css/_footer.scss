@@ -1,0 +1,18 @@
+footer{
+    padding: 24px;
+    background-color: var(--semi-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    @media (min-width: 992px) {
+        padding: 24px 48px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: inherit;
+    }
+}
