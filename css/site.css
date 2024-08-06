@@ -1,277 +1,383 @@
+@charset "UTF-8";
+
+/*
+Theme Name: Twenty Twenty-One
+Theme URI: https://wordpress.org/themes/twentytwentyone/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush. With new block patterns, which allow you to create a beautiful layout in a matter of seconds, this theme’s soft colors and eye-catching — yet timeless — design will let your work shine. Take it for a spin! See how Twenty Twenty-One elevates your portfolio, business website, or personal blog.
+Requires at least: 5.3
+Tested up to: 6.6
+Requires PHP: 5.6
+Version: 2.3
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwentyone
+Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog, portfolio
+
+Twenty Twenty-One WordPress Theme, (C) 2020 WordPress.org
+Twenty Twenty-One is distributed under the terms of the GNU GPL.
+*/
+
+/**
+ * SETTINGS
+ * File-header..........The file header for the themes style.css file.
+ * Fonts................Any font files, if the project needs specific fonts.
+ * Global...............Project-specific, globally available variables.
+ *
+ * TOOLS
+ * Functions............Global functions.
+ * Mixins...............Global mixins.
+ *
+ * GENERIC
+ * Normalize.css........Normalise browser defaults.
+ * Breakpoints..........Mixins and variables for responsive styles
+ * Vertical-margins.....Vertical spacing for the main components.
+ * Reset................Reset specific elements to make them easier to style in other contexts.
+ * Clearings............Clearings for the main components.
+ *
+ * ELEMENTS
+ * Blockquote...........Default blockquote.
+ * Forms................Element-level form styling.
+ * Headings.............H1–H6
+ * Links................Default links.
+ * Lists................Default lists.
+ * Media................Images, Figure, Figcaption, Embed, iFrame, Objects, Video.
+ *
+ * BLOCKS
+ * Audio................Specific styles for the audio block.
+ * Button...............Specific styles for the button block.
+ * Code.................Specific styles for the code block.
+ * Columns..............Specific styles for the columns block.
+ * Cover................Specific styles for the cover block.
+ * File.................Specific styles for the file block.
+ * Gallery..............Specific styles for the gallery block.
+ * Group................Specific styles for the group block.
+ * Heading..............Specific styles for the heading block.
+ * Image................Specific styles for the image block.
+ * Latest comments......Specific styles for the latest comments block.
+ * Latest posts.........Specific styles for the latest posts block.
+ * Legacy...............Specific styles for the legacy gallery.
+ * List.................Specific styles for the list block.
+ * Media text...........Specific styles for the media and text block.
+ * Navigation...........Specific styles for the navigation block.
+ * Paragraph............Specific styles for the paragraph block.
+ * Pullquote............Specific styles for the pullquote block.
+ * Quote................Specific styles for the quote block.
+ * Search...............Specific styles for the search block.
+ * Separator............Specific styles for the separator block.
+ * Table................Specific styles for the table block.
+ * Verse................Specific styles for the verse block.
+ * Video................Specific styles for the video block.
+ * Utilities............Block alignments.
+ *
+ * COMPONENTS
+ * Header...............Header styles.
+ * Footer...............Footer styles.
+ * Comments.............Comment styles.
+ * Archives.............Archive styles.
+ * 404..................404 styles.
+ * Search...............Search styles.
+ * Navigation...........Navigation styles.
+ * Footer Navigation....Footer Navigation styles.
+ * Pagination...........Pagination styles.
+ * Single...............Single page and post styles.
+ * Posts and pages......Misc, sticky post styles.
+ * Entry................Entry, author biography.
+ * Widget...............Widget styles.
+ * Editor...............Editor styles.
+ *
+ * UTILITIES
+ * A11y.................Screen reader text, prefers reduced motion etc.
+ * Color Palette........Classes for the color palette colors.
+ * Editor Font Sizes....Editor Font Sizes.
+ * Measure..............The width of a line of text, in characters.
+ */
+
+/* Categories 01 to 03 are the basics. */
+
+/* Variables */
 body {
-  height: 100%;
-  font-family: "Poppins", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  background-color: var(--black);
-}
+	height: 100%;
+	font-family: "Poppins", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	background-color: var(--black)!important;
+  }
+  
+  h1, h2, h3, h4, h5, p, a, div {
+	line-height: 1.5em;
+  }
+  
+  a {
+	text-decoration: none!important;
+  }
+  a:hover {
+	color: var(--primary);
+  }
+  
+  ul,
+  li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
 
-h1, h2, h3, h4, h5, p, a, div {
-  line-height: 1.5em;
-}
-
-a {
-  text-decoration: none;
-}
-a:hover {
-  color: var(--primary);
-}
-
-ul,
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --white: #fff;
-  --primary: #EBB53E;
-  --black: #1F2329;
-  --semi-black: #2B2F35;
-  --text: #666;
-}
-
-.btn-contact {
-  display: flex;
-  padding: 8px 16px;
-  background-color: var(--primary);
-  color: var(--black);
-  font-weight: 600;
-  border-radius: 4px;
-  font-size: 13px;
-  letter-spacing: 2px;
-  width: -moz-fit-content;
-  width: fit-content;
-  text-transform: uppercase;
-  transition: all 0.3s ease-out;
-}
-.btn-contact:hover {
-  background-color: #EAA63A;
-  color: var(--black);
-}
-
-.btn-menu {
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  background-color: var(--primary);
-}
-
-.btn-close {
-  display: flex;
-  width: 40px;
-  height: 40px;
-  background-color: #000;
-  color: #fff;
-  align-items: center;
-  justify-content: center;
-}
-
-.banner {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  text-align: center;
-}
-.banner h1 {
-  color: var(--white);
-}
-.banner p {
-  font-size: 18px;
-  color: #999;
-}
-
-.padding-top {
-  padding-top: 100px;
-}
-
-.padding-bottom {
-  padding-bottom: 100px;
-}
-
-.skills-section {
-  padding: 24px;
-}
-@media (min-width: 992px) {
+  ul{
+    margin: 0px;
+    padding: 0px!important;
+  }
+  
+  :root {
+	--white: #fff;
+	--primary: #EBB53E;
+	--black: #1F2329;
+	--semi-black: #2B2F35;
+	--text: #666;
+  }
+  
+  .btn-contact {
+	display: flex;
+	padding: 8px 16px;
+	background-color: var(--primary);
+	color: var(--black);
+	font-weight: 600;
+	border-radius: 4px;
+	font-size: 13px;
+	letter-spacing: 2px;
+	width: -moz-fit-content;
+	width: fit-content;
+	text-transform: uppercase;
+	transition: all 0.3s ease-out;
+  }
+  .btn-contact:hover {
+	background-color: #EAA63A;
+	color: var(--black);
+  }
+  
+  .btn-menu {
+	border: none;
+	width: 40px;
+	height: 40px;
+	border-radius: 4px;
+	background-color: var(--primary);
+  }
+  
+  .btn-close {
+	display: flex;
+	width: 40px;
+	height: 40px;
+	background-color: #000;
+	color: #fff;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .banner {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	text-align: center;
+  }
+  .banner h1 {
+	color: var(--white);
+  }
+  .banner p {
+	font-size: 18px;
+	color: #999;
+  }
+  
+  .padding-top {
+	padding-top: 100px;
+  }
+  
+  .padding-bottom {
+	padding-bottom: 100px;
+  }
+  
   .skills-section {
-    padding: 48px 48px 130px 48px;
+	padding: 24px;
   }
-}
-
-.skill-box {
-  width: 100%;
-  min-height: 200px;
-  background-color: var(--semi-black);
-  border-radius: 6px;
-  border: 1px solid #373c45;
-  padding: 24px;
-}
-.skill-box p {
-  font-size: 14px;
-  color: var(--white);
-  opacity: 0.6;
-}
-@media (min-width: 992px) {
+  @media (min-width: 992px) {
+	.skills-section {
+	  padding: 48px 48px 130px 48px;
+	}
+  }
+  
   .skill-box {
-    padding: 48px;
+	width: 100%;
+	min-height: 200px;
+	background-color: var(--semi-black);
+	border-radius: 6px;
+	border: 1px solid #373c45;
+	padding: 24px;
   }
-}
-
-.abt-me {
-  padding-top: 120px;
-  text-align: left;
-}
-.abt-me h2 {
-  color: var(--white);
-}
-.abt-me p {
-  color: var(--white);
-  opacity: 0.6;
-}
-.abt-me ul {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.abt-me ul li {
-  display: flex;
-  padding: 8px 16px;
-  text-align: center;
-  border-radius: 4px;
-  background-color: var(--semi-black);
-  color: var(--white);
-  font-size: 14px;
-}
-
-.profile-pic {
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 10px;
-}
-.profile-pic img {
-  width: 100%;
-  height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.copyright {
-  font-size: 14px;
-}
-
-header {
-  background-color: var(--semi-black);
-  padding: 24px;
-}
-@media (min-width: 992px) {
+  .skill-box p {
+	font-size: 14px;
+	color: var(--white);
+	opacity: 0.6;
+  }
+  @media (min-width: 992px) {
+	.skill-box {
+	  padding: 48px;
+	}
+  }
+  
+  .abt-me {
+	padding-top: 120px;
+	text-align: left;
+  }
+  .abt-me h2 {
+	color: var(--white);
+  }
+  .abt-me p {
+	color: var(--white);
+	opacity: 0.6;
+  }
+  .abt-me ul {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+  }
+  .abt-me ul li {
+	display: flex;
+	padding: 8px 16px;
+	text-align: center;
+	border-radius: 4px;
+	background-color: var(--semi-black);
+	color: var(--white);
+	font-size: 14px;
+  }
+  
+  .profile-pic {
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+	border-radius: 10px;
+  }
+  .profile-pic img {
+	width: 100%;
+	height: 300px;
+	-o-object-fit: cover;
+	   object-fit: cover;
+  }
+  
+  .copyright {
+	font-size: 14px;
+  }
+  
   header {
-    padding: 24px 48px;
+	background-color: var(--semi-black);
+	padding: 24px;
   }
-}
-header .logo {
-  font-weight: 600;
-  font-size: 24px;
-  color: var(--white);
-}
-header .main-menu {
-  display: flex;
-  gap: 48px;
-}
-header .main-menu li a {
-  color: var(--white);
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: #999;
-}
-header .main-menu li .active {
-  color: #fff;
-  font-weight: 600;
-}
-
-.offcanvas {
-  background-color: var(--semi-black);
-}
-.offcanvas .main-menu {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.offcanvas .main-menu li a {
-  font-size: 24px;
-}
-.offcanvas .offcanvas-body {
-  padding: 48px;
-}
-
-.tabs-menu {
-  display: flex;
-  gap: 32px;
-  overflow: auto;
-  white-space: nowrap;
-}
-.tabs-menu li a {
-  color: var(--white);
-  text-transform: uppercase;
-  opacity: 0.5;
-  font-weight: 500;
-}
-.tabs-menu li .active {
-  opacity: 1;
-}
-
-footer {
-  padding: 24px;
-  background-color: var(--semi-black);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-}
-@media (min-width: 992px) {
+  @media (min-width: 992px) {
+	header {
+	  padding: 24px 48px;
+	}
+  }
+  header .logo {
+	font-weight: 600;
+	font-size: 24px;
+	color: var(--white);
+  }
+  header .main-menu {
+	display: flex;
+	gap: 48px;
+  }
+  header .main-menu li a {
+	color: var(--white);
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 500;
+	color: #999;
+  }
+  header .main-menu li .active {
+	color: #fff;
+	font-weight: 600;
+  }
+  
+  .offcanvas {
+	background-color: var(--semi-black);
+  }
+  .offcanvas .main-menu {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  }
+  .offcanvas .main-menu li a {
+	font-size: 24px;
+  }
+  .offcanvas .offcanvas-body {
+	padding: 48px;
+  }
+  
+  .tabs-menu {
+	display: flex;
+	gap: 32px;
+	overflow: auto;
+	white-space: nowrap;
+  }
+  .tabs-menu li a {
+	color: var(--white);
+	text-transform: uppercase;
+	opacity: 0.5;
+	font-weight: 500;
+  }
+  .tabs-menu li .active {
+	opacity: 1;
+  }
+  
   footer {
-    padding: 24px 48px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: inherit;
+	padding: 24px;
+	background-color: var(--semi-black);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
   }
-}
-
-.work-card {
-  width: 100%;
-  height: 400px;
-  background-color: var(--semi-black);
-  overflow: hidden;
-  position: relative;
-}
-.work-card img {
-  width: 100%;
-  height: 400px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.work-card .over-image {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(43, 47, 53, 0.8);
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-size: 48px;
-  opacity: 0;
-  transition: all 0.3s ease-out;
-}
-
-.work-card:hover .over-image {
-  opacity: 1;
-}/*# sourceMappingURL=site.css.map */
+  @media (min-width: 992px) {
+	footer {
+	  padding: 24px 48px;
+	  flex-direction: row;
+	  justify-content: space-between;
+	  align-items: center;
+	  text-align: inherit;
+	}
+  }
+  
+  .work-card {
+	width: 100%;
+	height: 400px;
+	background-color: var(--semi-black);
+	overflow: hidden;
+	position: relative;
+  }
+  .work-card img {
+	width: 100%;
+	height: 400px;
+	-o-object-fit: cover;
+	   object-fit: cover;
+  }
+  .work-card .over-image {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(43, 47, 53, 0.8);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--white);
+	font-size: 48px;
+	opacity: 0;
+	transition: all 0.3s ease-out;
+  }
+  
+  .work-card:hover .over-image {
+	opacity: 1;
+  }
+  .min-height-100vh{
+    min-height: calc(100vh - 120px);
+  }
+  /*# sourceMappingURL=site.css.map */
