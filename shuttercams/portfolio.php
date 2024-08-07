@@ -2,7 +2,7 @@
 /* Template Name: portfolio */
 ?>
 <?php get_header(); ?>
-
+<div class="min-height-100vh">
 <section class="py-5">
         
         <div class="px-4 d-flex justify-content-center">
@@ -60,7 +60,7 @@
             <div class="row g-0">
                 <?php 
                     $args = array( 
-                        'post_type' => 'photography', 'category_name' => 'graphic-design');
+                        'post_type' => 'photography');
                         $the_query = new WP_Query( $args ); 
                 ?>
       
@@ -69,8 +69,9 @@
                 
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
 
@@ -86,154 +87,365 @@
         </div>
         <div class="tab-pane fade" id="event" role="tabpanel" aria-labelledby="event-tab">
             <div class="row g-0">
+            <?php 
+                    $args = array( 
+                        'post_type' => 'photography', 'category_name' => 'event');
+                        $the_query = new WP_Query( $args ); 
+                ?>
+      
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
-                    <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
-                    <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
-                    </div>
-                </div>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else:  ?>
+                        <p class="d-flex text-center w-100">
+                            <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                        </p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="tab-pane fade" id="coporate" role="tabpanel" aria-labelledby="coporate-tab">
-            <div class="row g-0">
+        <?php 
+                    $args = array( 
+                        'post_type' => 'photography', 'category_name' => 'coporate');
+                        $the_query = new WP_Query( $args ); 
+                ?>
+      
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
-            </div>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else:  ?>
+                        <p class="d-flex text-center w-100">
+                            <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                        </p>
+                <?php endif; ?>
         </div>
-        <div class="tab-pane fade" id="event" role="tabpanel" aria-labelledby="event-tab">
-            <div class="row g-0">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
-                    <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <div class="tab-pane fade" id="birthday" role="tabpanel" aria-labelledby="birthday-tab">
             <div class="row g-0">
+            <?php 
+                    $args = array( 
+                        'post_type' => 'photography', 'category_name' => 'birthday');
+                        $the_query = new WP_Query( $args ); 
+                ?>
+      
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else:  ?>
+                        <p class="d-flex text-center w-100">
+                            <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                        </p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="tab-pane fade" id="meternity" role="tabpanel" aria-labelledby="meternity-tab">
             <div class="row g-0">
+            <?php 
+                    $args = array( 
+                        'post_type' => 'photography', 'category_name' => 'meternity');
+                        $the_query = new WP_Query( $args ); 
+                ?>
+      
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else:  ?>
+                        <p class="d-flex text-center w-100">
+                            <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                        </p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="tab-pane fade" id="wedding" role="tabpanel" aria-labelledby="wedding-tab">
             <div class="row g-0">
+            <?php 
+                    $args = array( 
+                        'post_type' => 'photography', 'category_name' => 'wedding');
+                        $the_query = new WP_Query( $args ); 
+                ?>
+      
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else:  ?>
+                        <p class="d-flex text-center w-100">
+                            <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                        </p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="tab-pane fade" id="nature" role="tabpanel" aria-labelledby="nature-tab">
             <div class="row g-0">
+            <?php 
+                    $args = array( 
+                        'post_type' => 'photography', 'category_name' => 'nature');
+                        $the_query = new WP_Query( $args ); 
+                ?>
+      
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else:  ?>
+                        <p class="d-flex text-center w-100">
+                            <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                        </p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="tab-pane fade" id="street" role="tabpanel" aria-labelledby="street-tab">
             <div class="row g-0">
+            <?php 
+                    $args = array( 
+                        'post_type' => 'photography', 'category_name' => 'street');
+                        $the_query = new WP_Query( $args ); 
+                ?>
+      
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else:  ?>
+                        <p class="d-flex text-center w-100">
+                            <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                        </p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="tab-pane fade" id="videography" role="tabpanel" aria-labelledby="videography-tab">
             <div class="row g-0">
+            <?php 
+                    $args = array( 
+                        'post_type' => 'photography', 'category_name' => 'videography');
+                        $the_query = new WP_Query( $args ); 
+                ?>
+      
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else:  ?>
+                        <p class="d-flex text-center w-100">
+                            <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                        </p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="tab-pane fade" id="fineart" role="tabpanel" aria-labelledby="fineart-tab">
             <div class="row g-0">
+            <?php 
+                    $args = array( 
+                        'post_type' => 'photography', 'category_name' => 'fineart');
+                        $the_query = new WP_Query( $args ); 
+                ?>
+      
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else:  ?>
+                        <p class="d-flex text-center w-100">
+                            <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                        </p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="tab-pane fade" id="realestate" role="tabpanel" aria-labelledby="realestate-tab">
             <div class="row g-0">
+            <?php 
+                    $args = array( 
+                        'post_type' => 'photography', 'category_name' => 'realestate');
+                        $the_query = new WP_Query( $args ); 
+                ?>
+      
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else:  ?>
+                        <p class="d-flex text-center w-100">
+                            <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                        </p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="tab-pane fade" id="commercial" role="tabpanel" aria-labelledby="commercial-tab">
             <div class="row g-0">
+            <?php 
+                    $args = array( 
+                        'post_type' => 'photography', 'category_name' => 'commercial');
+                        $the_query = new WP_Query( $args ); 
+                ?>
+      
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else:  ?>
+                        <p class="d-flex text-center w-100">
+                            <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                        </p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="tab-pane fade" id="newborn" role="tabpanel" aria-labelledby="newborn-tab">
             <div class="row g-0">
+            <?php 
+                    $args = array( 
+                        'post_type' => 'photography', 'category_name' => 'newborn');
+                        $the_query = new WP_Query( $args ); 
+                ?>
+      
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else:  ?>
+                        <p class="d-flex text-center w-100">
+                            <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                        </p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="tab-pane fade" id="graphic-design" role="tabpanel" aria-labelledby="graphic-design-tab">
             <div class="row g-0">
+            <?php 
+                    $args = array( 
+                        'post_type' => 'photography', 'category_name' => 'graphic-design');
+                        $the_query = new WP_Query( $args ); 
+                ?>
+      
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
                     <div class="work-card">
-                        <a href="#" class="over-image"><i class="ti ti-capture"></i></a>
-                        <img src="https://shuttercams.com/wp-content/uploads/2024/07/9.jpg" alt="">
+                        <a href="<?php the_permalink(); ?>" class="over-image"><i class="ti ti-capture"></i></a>
+                        <?php $image = get_field('upload_photography');?>
+                        <img src="<?php echo $image;?>">
                     </div>
                 </div>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else:  ?>
+                        <p class="d-flex text-center w-100">
+                            <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                        </p>
+                <?php endif; ?>
             </div>
         </div>
         
@@ -242,4 +454,5 @@
 
  
 
-<?php get_footer(); ?>
+</div>
+    <?php get_footer(); ?>

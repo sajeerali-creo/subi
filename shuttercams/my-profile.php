@@ -2,7 +2,7 @@
 /* Template Name: my-profile */
 ?>
 <?php get_header(); ?>
-
+<div class="min-height-100vh">
 <?php 
             $args = array( 
                 'post_type' => 'about_me', 
@@ -62,5 +62,5 @@
 </p>
 <?php endif; ?>
 
-
+</div>
 <?php get_footer(); ?>
